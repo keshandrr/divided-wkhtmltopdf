@@ -16,12 +16,12 @@ upon first use and unzips it into the same directory. So if your ruby gem binari
 
 The various wkhtmltopdf-binaries will be installed here:
 
-    /usr/lib/ruby/versions/2.6/lib/ruby/gems/2.6.0/gems/wkhtmltopdf-binary-0.12.5.1/bin/
+    /usr/lib/ruby/versions/2.6/lib/ruby/gems/2.6.0/gems/wkhtmltopdf-binary-0.1/bin/
 
 Giving write access whatever user is running your program (e.g. web server, background job processor),
 e.g. your own personal user in a dev environment, will fix the problem. After the binary is uncompressed, write access can be revoked again if desired.
 
-    chmod -R 777 /usr/lib/ruby/versions/2.6/lib/ruby/gems/2.6.0/gems/wkhtmltopdf-binary-0.12.5.1/bin/
+    chmod -R 777 /usr/lib/ruby/versions/2.6/lib/ruby/gems/2.6.0/gems/wkhtmltopdf-binary-0.1/bin/
 
 # Gem Development
 
@@ -32,14 +32,6 @@ Hints for extracting binaries from https://wkhtmltopdf.org/downloads.html (dpkg 
 Debian/Ubuntu
 
     dpkg -x wkhtmltox_0.12.5-1.trusty_amd64.deb .
-
-CentOS
-
-    rpm2cpio wkhtmltox-0.12.5-1.centos7.x86_64.rpm | cpio -idmv
-
-Archlinux/manjaro
-
-    tar -xf wkhtmltox-0.12.6-1.archlinux.x86_64.tar.xz
 
 macOS
 
@@ -55,22 +47,4 @@ Hints for compressing binaries
 
 Debian/Ubuntu
     user/local/bin refers to the extracted binaries directory
-    gzip --best -c usr/local/bin/wkhtmltopdf > wkhtmltopdf_ubuntu_22.04.amd64.gz
-
-## Testing
-
-To execute gem tests locally, install in your OS:
-
-- Docker
-- Docker compose
-- Ruby
-- Bundler
-
-Then, execute the commands below:
-
-```bash
-git clone https://github.com/zakird/wkhtmltopdf_binary_gem
-cd wkhtmltopdf_binary_gem/
-bundle install
-bundle exec rake
-```
+    gzip --best -c usr/local/bin/wkhtmltopdf > wkhtmltopdf_debian_10_amd64.gz
